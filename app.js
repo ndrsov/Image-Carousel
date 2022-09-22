@@ -22,3 +22,19 @@ function changeImage() {
 
   imgContainer.style.transform = `translateX(${-idx * 500}px)`;
 }
+
+function resetInterval() {
+  clearInterval(interval);
+  interval = setInterval(run, 2000);
+}
+
+rightBtn.addEventListener("click", () => {
+  idx++;
+  changeImage();
+  resetInterval();
+});
+leftBtn.addEventListener("click", () => {
+  idx--;
+  changeImage();
+  resetInterval();
+});
